@@ -29,6 +29,7 @@
 					<h1>Git Presentation</h1>
 					for newbies and advanced users
 				</section>
+
 				<section>
 					<section>
 						<h2>What is Git (really) ?</h2>
@@ -45,15 +46,51 @@
 						<a href="https://www.github.com" target="_blank"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="Github" width="40%" height="40%"></a>
 					</section>
 				</section>
+
 				<section>
-					<section>
 						<h2>The Git logic</h2>
 						<p>(where most people get lost)</p>
-					</section>
+				</section>
+
+				<section id="fragments">
+					<h3>Different "Spaces" managed by Git</h3>
+					<p class="fragment">Working Directory - Stage - Local Repository - Remote Repository</p>
+				</section>
+
+				<section>
 					<section>
-						Git interacts with your files to create an Index of the overrall changes
+						<h3>Stage</h3>
+					</section>
+					<section id="fragments">
+						<p>Git interacts with your files to create an Index of the overall changes</p>
+						<p class="fragment">This index is called the Stage</p>
+						<img src="./git-working-staging-noarrow.png" alt="git-working-staging-noarrow" class="fragment">
+					</section>
+					<section id="fragments">
+						<p>You can add changes to the Stage with </p>
+						<pre class="fragment"><code class="shell" data-trim contenteditable>
+git add &lt;file/directory&gt;
+						</code></pre>
+						<p class="fragment">And remove them with </p>
+						<pre class="fragment"><code class="shell" data-trim contenteditable>
+git reset &lt;nothing/directory&gt;
+						</code></pre>
+						<img class="fragment" src="./git-working-staging-arrow.png" alt="git-working-staging-arrow.png">
+					</section>
+					<section id="fragments">
+						How can we reset <b>nothing</b> ? How does that make sense?
+						<p class="fragment">When we reset without arguments, we revert to a previous commit (by default the HEAD)</p>
 					</section>
 				</section>
+
+
+				<section>
+					<section>
+						<h3>Local repository</h3>
+					</section>
+				</section>
+
+
 			</div>
 		</div>
 
