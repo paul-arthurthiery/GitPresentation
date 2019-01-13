@@ -1,6 +1,6 @@
 /* global module:false */
 module.exports = function (grunt) {
-  const port = grunt.option('port') || 8000;
+  const port = grunt.option('port') || 8888;
   let root = grunt.option('root') || '.';
 
   if (!Array.isArray(root)) root = [root];
