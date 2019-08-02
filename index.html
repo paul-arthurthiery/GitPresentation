@@ -26,13 +26,13 @@
 			<div class="slides">
 				<section>
 					<img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" width="15%" height="15%">
-					<h1>Git Presentation</h1>
+					<h1 style="font-size: 3.5em;">Git Presentation</h1>
 					for newbies and advanced users
 				</section>
 
 				<section>
 					<section>
-						<h2>What is Git (really) ?</h2>
+						<h2>What is Git (really) ? 🤔</h2>
 					</section>
 					<section>
 						Free and open source version control tool, originally created to manage Linux versions
@@ -94,12 +94,125 @@ git reset &lt;nothing/directory&gt;
 						<p>I talked about <b>commits</b> before, but what is that ?</p>
 						<p class="fragment">A commit is a bundle of changes (the current Stage), to which is added a log message, an id, etc.</p>
 						<p class="fragment">Commits reside in your Local Repository, which contains every commit ever added</p>
+						<img class="fragment" src="./git-working-local-noarrow.png" width="80%" height="80%">
 					</section>
 					<section id="fragments">
-						
+						<p>You can move the current stage to the local repository with</p>
+						<pre class="fragment"><code class="shell" data-trim contenteditable>
+git commit &lt;nothing/-m 'message'&gt;
+						</code></pre>
+						<p>And move your changes back from the local repository to the stage with</p>
+						<pre class="fragment"><code class="shell" data-trim contenteditable>
+git reset &lt;target commit SHA/commit path relative to HEAD&gt;
+						</code></pre>
+					</section>
+					<section>
+						<img src="./git-working-local-arrow.png" width="80%" height="80%">
 					</section>
 				</section>
 
+				<section>
+					<section>
+						<h3>Ok that's great, but what is that Github I keep hearing about ?</h3>
+					</section>
+					<section id="fragments">
+						<p>Github, Gitlab, Bitbucket, etc. are remotes, the 4th kind of Space</p>
+						<img class="fragment" src="./git-spaces-noarrow.png" width="80%" height="80%">
+					</section>
+					<section id="fragments">
+						<p>Your current Local Repository is linked to at least one Remote (origin), to which you can add a commit with</p>
+						<pre class="fragment"><code class="shell" data-trim contenteditable>
+git push &lt;remote&gt; &lt;branch&gt;
+						</code></pre>
+						<small class="fragment">We'll see what a branch is in a second</small>
+						<p class="fragment">You can also retrieve the state of the remote with</p>
+						<pre class="fragment"><code class="shell" data-trim contenteditable>
+git fetch &lt;--all for all tracked remotes&gt;
+						</code></pre>
+						<p class="fragment">And then apply change from the desired branch with</p>
+						<pre class="fragment"><code class="shell" data-trim contenteditable>
+git merge &lt;remote/branch&gt;
+						</code></pre>
+					</section>
+					<section id="fragments">
+						<p>The process of retrieving and applying changes seems tideous, any shorthand ?</p>
+						<p class="fragment">YES</p>
+						<pre class="fragment"><code class="shell" data-trim contenteditable>
+git pull &lt;remote&gt; &lt;branch&gt;
+						</code></pre>
+					</section>
+					<section>
+						<img src="./git-spaces.png" width="100%" height="100%">
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>On the subject of branches</h3>
+					</section>
+					<section id="fragments">
+						<p>Git allows you to have multiple instances of a local repository, also called branches</p>
+						<p class="fragment">This allows you to have multiple versions of a single project</p>
+					</section>
+					<section id="fragments">
+						<p>You can create a branch with</p>
+						<pre class="fragment"><code class="shell" data-trim contenteditable>
+git checkout -b &lt;branchname&gt;
+						</code></pre>
+						<p class="fragment">Or access a branch with</p>
+						<pre class="fragment"><code class="shell" data-trim contenteditable>
+git checkout &lt;branchname&gt;
+						</code></pre>
+					</section>
+					<section>
+						<p>Why bother about branches? Can't everybody just push their commits to master ?</p>
+					</section>
+					<section id="fragments">
+						<p>We use GitFlow at Dynamicly</p>
+						<img class="fragment" src="./git-flow-branchs.png" width="80%" height="80%">
+					</section>
+					<section id="fragments">
+						<p>Every feature is a new branch</p>
+						<p class="fragment">Completed features get reviewed, then merged to development</p>
+						<p class="fragment">This allows us to manage released features, version tag master depending on the available features, make sure no side effects are caused before release, etc.</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<p>What did we learn today ?</p>
+					</section>
+					<section id="fragments">
+						<p>Git allows you to manage 4 Spaces: Working Directory, Staging, Local Repository, Remote Repository</p>
+						<p class="fragment">Repositories also have branches, which are kind of different versions</p>
+						<p class="fragment">Everything is undoable and redoable with git, you have never "fucked up" the repo (unless you force push, but at that point you are looking for trouble). See: <a href="https://ohshitgit.com/" target="_blank">ohshitgit</a></p>
+					</section>
+				</section>
+
+				<section>
+					<p>That's it ! You are now git masters 😎</p>
+				</section>
+
+				<section>
+					<section  id="now">
+						<p>All this time spent in the terminal makes me hate myself, any tips ?</p>
+					</section>
+					<section id="fragments">
+						<p>Use Iterm2 on MacOS</p>
+						<img src="./iterm2.png" width="80%" height="80%">
+						<small>For Windows I don't know guys, I haven't touched Windows in 5 years</small>
+					</section>
+					<section id="fragments">
+						<p>Wow my terminal has a lot more features, but how can I make it EVEN BETTER ??</p>
+					</section>
+					<section id="fragments">
+						<p>Use Zsh (better shell, with a lot of baked in features)</p>
+						<p class="fragment">Install Oh-My-Zsh to add plugins and themes</p>
+						<!-- <video width="320" height="240" controls>
+  						<source src="./what-does-zsh-look-like.mov" type="video/mov">
+						</video> -->
+					</section>
+				</section>
 
 			</div>
 		</div>
