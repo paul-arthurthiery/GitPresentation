@@ -62,20 +62,22 @@
 						<h3>Stage</h3>
 					</section>
 					<section id="fragments">
-						<p>Git interacts with your files to create an Index of the overall changes</p>
+						<p>Git can interact with your files to create an Index of the overall changes</p>
 						<p class="fragment">This index is called the Stage</p>
 						<img src="./git-working-staging-noarrow.png" alt="git-working-staging-noarrow" class="fragment">
 					</section>
 					<section id="fragments">
-						<p>You can add changes to the Stage with </p>
+						<p>You can add file changes to the Stage with </p>
 						<pre class="fragment"><code class="shell" data-trim contenteditable>
 git add &lt;file/directory&gt;
 						</code></pre>
+						<small class="fragment">unchanged files are ignored</small>
 						<p class="fragment">And remove them with </p>
 						<pre class="fragment"><code class="shell" data-trim contenteditable>
 git reset &lt;nothing/directory&gt;
 						</code></pre>
-						<img class="fragment" src="./git-working-staging-arrow.png" alt="git-working-staging-arrow.png">
+						<img class="fragment" src="./git-working-staging-arrow.png" alt="git-working-staging-arrow.png" width="40%" height="40%">
+						<small class="fragment">If nothing is staged, git finds changes by comparing to the last commit</small>
 					</section>
 					<section id="fragments">
 						How can we reset <b>nothing</b> ? How does that make sense?
@@ -87,6 +89,14 @@ git reset &lt;nothing/directory&gt;
 				<section>
 					<section>
 						<h3>Local repository</h3>
+					</section>
+					<section id="fragments">
+						<p>I talked about <b>commits</b> before, but what is that ?</p>
+						<p class="fragment">A commit is a bundle of changes (the current Stage), to which is added a log message, an id, etc.</p>
+						<p class="fragment">Commits reside in your Local Repository, which contains every commit ever added</p>
+					</section>
+					<section id="fragments">
+						
 					</section>
 				</section>
 
